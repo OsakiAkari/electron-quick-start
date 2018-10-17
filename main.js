@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
+//const GA = require('electron-ga')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -22,6 +23,9 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  //var func = GA.Analytics
+  //var test = new func('UA-127585727-1',{appName: 'sampleapp'})
 }
 
 // This method will be called when Electron has finished

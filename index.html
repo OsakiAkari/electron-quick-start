@@ -14,6 +14,20 @@
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
+      let ga = require('electron-ga')
+      var func = ga.Analytics
+      var test = new func('UA-127585727-1')
+      //var test = new func('UA-127556755-1')
+      //await test.send('screenview',{cd: 'User List'})
+      gatest(test)
+
+      async function gatest(test) {
+        test.send('screenview',{cd: 'User List'})
+        await test.send('screenview',{cd: 'User List'})
+        await test.send('event', { ec: 'Scroll', ea: 'scrollto', el: 'row', ev: 123 })
+        console.log(test)
+      }
+
     </script>
   </body>
 </html>
